@@ -1,0 +1,20 @@
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.ant-layout-sider-children {
+  background-color: #fff;
+}
+
+.trigger {
+  transition: color 0.3s;
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+}
+
+.trigger:hover {
+  color: #24bba6;
+  transition: color 0.3s;
+}

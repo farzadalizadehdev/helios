@@ -1,10 +1,10 @@
-import Layout from "./containers/Layout/Layout";
+import Layout from "./components/Layout/Layout";
 import { ConfigProvider } from "antd";
 
 function App() {
   ConfigProvider.config({
     theme: {
-      primaryColor: '#13AFA8',
+      primaryColor: '#24bba6',
     },
   });
   return (

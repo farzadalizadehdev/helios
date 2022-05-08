@@ -12,7 +12,6 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Routes from "../../Routes";
 
 const SiderDemo = (props) => {
-
   const { Header, Sider, Content } = Layout;
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,8 +30,12 @@ const SiderDemo = (props) => {
     navigate(`/${item.key}`);
   };
 
+  // useEffect(()=>{
+  //   console.log(location);
+  // },[])
+
   return (
-    <Layout>
+    <Layout className="h-screen">
       <Sider trigger={null} collapsible collapsed={state.collapsed}>
         <div className="logo">
           <Logo collapsed={state.collapsed} />
@@ -40,7 +43,9 @@ const SiderDemo = (props) => {
         <Menu
           theme="light"
           mode="inline"
-          defaultSelectedKeys={[`${location.pathname.slice(1)}`]}
+          defaultSelectedKeys={[
+            `${location.pathname !== "/" ? location.pathname.slice(1) : "dashboard"}`,
+          ]}
           onClick={navigationHandler}
           items={[
             {

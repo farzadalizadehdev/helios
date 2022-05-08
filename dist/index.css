@@ -466,12 +466,43 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
 
 .inline {
   display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-1\/3 {
@@ -482,8 +513,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.5rem;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-\[url\(\'\/src\/assets\/images\/path1\.svg\'\)\] {
+  background-image: url('/src/assets/images/path1.svg');
 }
 
 .from-cyan-100 {
@@ -491,8 +530,63 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(207 250 254 / 0));
 }
 
+.from-orange-100 {
+  --tw-gradient-from: #ffedd5;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 237 213 / 0));
+}
+
+.from-rose-100 {
+  --tw-gradient-from: #ffe4e6;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 228 230 / 0));
+}
+
+.from-sky-100 {
+  --tw-gradient-from: #e0f2fe;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(224 242 254 / 0));
+}
+
 .to-blue-100 {
   --tw-gradient-to: #dbeafe;
+}
+
+.to-purple-100 {
+  --tw-gradient-to: #f3e8ff;
+}
+
+.to-amber-200 {
+  --tw-gradient-to: #fde68a;
+}
+
+.to-amber-100 {
+  --tw-gradient-to: #fef3c7;
+}
+
+.to-pink-100 {
+  --tw-gradient-to: #fce7f3;
+}
+
+.to-red-100 {
+  --tw-gradient-to: #fee2e2;
+}
+
+.to-cyan-100 {
+  --tw-gradient-to: #cffafe;
+}
+
+.to-sky-100 {
+  --tw-gradient-to: #e0f2fe;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .p-6 {

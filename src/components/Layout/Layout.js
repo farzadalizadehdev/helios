@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Layout, Menu } from "antd";
+import { Avatar, Layout, Menu, Dropdown, Space } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -8,8 +8,9 @@ import {
 } from "@ant-design/icons";
 import { Logo } from "../logo/Logo";
 import "./layout.css";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import Routes from "../../Routes";
+import { UserOutlined, DownOutlined } from "@ant-design/icons";
 
 const SiderDemo = (props) => {
   const { Header, Sider, Content } = Layout;
@@ -30,6 +31,24 @@ const SiderDemo = (props) => {
     navigate(`/${item.key}`);
   };
 
+  const menu = (
+    <Menu
+      items={[
+        {
+          label: <Link to="/requests">درخواست های من</Link>,
+          key: "0",
+        },
+        {
+          type: "divider",
+        },
+        {
+          label: <Link to="/login">خروج</Link>,
+          key: "1",
+        },
+      ]}
+    />
+  );
+
   // useEffect(()=>{
   //   console.log(location);
   // },[])
@@ -44,7 +63,11 @@ const SiderDemo = (props) => {
           theme="light"
           mode="inline"
           defaultSelectedKeys={[
-            `${location.pathname !== "/" ? location.pathname.slice(1) : "dashboard"}`,
+            `${
+              location.pathname !== "/"
+                ? location.pathname.slice(1)
+                : "dashboard"
+            }`,
           ]}
           onClick={navigationHandler}
           items={[
@@ -62,7 +85,10 @@ const SiderDemo = (props) => {
         />
       </Sider>
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
+        <Header
+          className="flex items-center justify-between site-layout-background"
+          style={{ padding: 0 }}
+        >
           {React.createElement(
             state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
             {
@@ -70,6 +96,17 @@ const SiderDemo = (props) => {
               onClick: toggle,
             }
           )}
+          <div className="ml-4">
+            <Avatar size="" icon={<UserOutlined />} />
+            <Dropdown className="mx-2" overlay={menu} trigger={["click"]}>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  نام کاربری
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
+          </div>
         </Header>
         <Content
           className="site-layout-background"

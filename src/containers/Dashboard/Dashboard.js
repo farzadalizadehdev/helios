@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Card, Button, Modal } from "antd";
+import { Button, Modal } from "antd";
+import { Link } from "react-router-dom";
 const Dashboard = (props) => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -73,7 +74,7 @@ const Dashboard = (props) => {
           <h3 className="text-lg">درخواست های من</h3>
           <p className="font-normal">نمایش پیام مناسب به کاربر</p>
           <Button className="mt-4" shape="round" size="middle" type="primary">
-            مشاهده
+            <Link to={`/requests`}>مشاهده</Link>
           </Button>
         </div>
       </div>

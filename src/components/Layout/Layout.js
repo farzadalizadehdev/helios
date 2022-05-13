@@ -3,14 +3,16 @@ import { Avatar, Layout, Menu, Dropdown, Space } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  DiffOutlined,
   AppstoreAddOutlined,
+  UserOutlined,
+  DownOutlined,
+  FileDoneOutlined,
+  FileAddOutlined,
 } from "@ant-design/icons";
 import { Logo } from "../logo/Logo";
 import "./layout.css";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Routes from "../../Routes";
-import { UserOutlined, DownOutlined } from "@ant-design/icons";
 
 const SiderDemo = (props) => {
   const { Header, Sider, Content } = Layout;
@@ -77,8 +79,13 @@ const SiderDemo = (props) => {
               label: "داشبورد",
             },
             {
+              key: "registration",
+              icon: <FileAddOutlined />,
+              label: "درخواست جدید",
+            },
+            {
               key: "requests",
-              icon: <DiffOutlined />,
+              icon: <FileDoneOutlined />,
               label: "درخواست های من",
             },
           ]}
@@ -109,10 +116,9 @@ const SiderDemo = (props) => {
           </div>
         </Header>
         <Content
-          className="site-layout-background"
           style={{
             margin: "24px 16px",
-            padding: 24,
+            // padding: 24,
             minHeight: 280,
           }}
         >

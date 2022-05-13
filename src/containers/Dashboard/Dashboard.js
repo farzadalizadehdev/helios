@@ -43,7 +43,7 @@ const Dashboard = (props) => {
       >
         <p>{modalText}</p>
       </Modal>
-      <div className="flex">
+      <div className="flex items-start h-screen py-4 mb-8 bg-white rounded-md">
         <div className="w-1/3 p-6 mx-4 rounded-lg bg-gradient-to-r from-cyan-100 to-sky-100">
           <h3 className="text-lg">ثبت پزشک</h3>
           <p className="font-normal">نمایش پیام مناسب به کاربر</p>

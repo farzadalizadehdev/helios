@@ -1,4 +1,5 @@
 import { Table, Tag, Space } from "antd";
+import { Link } from "react-router-dom";
 const Requests = (props) => {
   const columns = [
     {
@@ -37,8 +38,7 @@ const Requests = (props) => {
       key: "action",
       render: (text, record) => (
         <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
+          <Link to={"/indivisual"}>تکمیل اطلاعات {record.name}</Link>
         </Space>
       ),
     },
@@ -47,25 +47,25 @@ const Requests = (props) => {
   const data = [
     {
       key: "1",
-      title: "John Brown",
+      title: "نام پزشک",
       type: "پزشک",
       status: ["تکراری"],
     },
     {
       key: "2",
-      title: "John Brown",
+      title: "نام مرکز",
       type: "مرکز",
       status: ["", ""],
     },
     {
       key: "3",
-      title: "John Brown",
+      title: "نام پزشک",
       type: "پزشک",
       status: ["", ""],
     },
   ];
   return (
-    <div>
+    <div className="p-8 bg-white rounded-md">
       <h1 className="mb-6">درخواست های من</h1>
       <Table bordered columns={columns} dataSource={data} />
     </div>

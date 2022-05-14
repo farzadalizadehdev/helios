@@ -79,11 +79,6 @@ const SiderDemo = (props) => {
               label: "داشبورد",
             },
             {
-              key: "registration",
-              icon: <FileAddOutlined />,
-              label: "درخواست جدید",
-            },
-            {
               key: "requests",
               icon: <FileDoneOutlined />,
               label: "درخواست های من",

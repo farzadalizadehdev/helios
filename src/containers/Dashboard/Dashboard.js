@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import { Link } from "react-router-dom";
+import physicianImg from "../../assets/images/physician.svg";
+import organizationImg from "../../assets/images/organization.svg";
+import requestsImg from "../../assets/images/requests.svg";
+
 const Dashboard = (props) => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -44,38 +48,47 @@ const Dashboard = (props) => {
         <p>{modalText}</p>
       </Modal>
       <div className="flex items-start h-screen py-4 mb-8 bg-white rounded-md">
-        <div className="w-1/3 p-6 mx-4 rounded-lg bg-gradient-to-r from-cyan-100 to-sky-100">
-          <h3 className="text-lg">ثبت پزشک</h3>
-          <p className="font-normal">نمایش پیام مناسب به کاربر</p>
-          <Button
-            onClick={DoctorRegistration}
-            className="mt-4"
-            shape="round"
-            size="middle"
-            type="primary"
-          >
-            ثبت پزشک
-          </Button>
+        <div className="flex items-center justify-between w-1/3 p-6 mx-4 rounded-lg bg-gradient-to-r from-teal-50 to-teal-100">
+          <div>
+            <h3 className="text-lg bold-bold">ثبت پزشک</h3>
+            <p className="font-normal">نمایش پیام مناسب به کاربر</p>
+            <Button
+              onClick={DoctorRegistration}
+              className="mt-4"
+              shape="round"
+              size="middle"
+              type="primary"
+            >
+              ثبت پزشک
+            </Button>
+          </div>
+          <img className="" src={physicianImg} />
         </div>
-        <div className="w-1/3 p-6 mx-4 rounded-lg bg-gradient-to-r from-rose-100 to-pink-100">
-          <h3 className="text-lg">ثبت مرکز</h3>
-          <p className="font-normal">نمایش پیام مناسب به کاربر</p>
-          <Button
-            onClick={clinicRegistration}
-            className="mt-4"
-            shape="round"
-            size="middle"
-            type="primary"
-          >
-            ثبت مرکز
-          </Button>
+        <div className="flex items-center justify-between w-1/3 p-6 mx-4 rounded-lg bg-gradient-to-r from-sky-50 to-sky-100">
+          <div>
+            <h3 className="text-lg bold-bold">ثبت مرکز</h3>
+            <p className="font-normal">نمایش پیام مناسب به کاربر</p>
+            <Button
+              onClick={clinicRegistration}
+              className="mt-4"
+              shape="round"
+              size="middle"
+              type="primary"
+            >
+              ثبت مرکز
+            </Button>
+          </div>
+          <img className="" src={organizationImg} />
         </div>
-        <div className="w-1/3 p-6 mx-4 rounded-lg bg-gradient-to-r from-orange-100 to-amber-100">
-          <h3 className="text-lg">درخواست های من</h3>
-          <p className="font-normal">نمایش پیام مناسب به کاربر</p>
-          <Button className="mt-4" shape="round" size="middle" type="primary">
-            <Link to={`/requests`}>مشاهده</Link>
-          </Button>
+        <div className="flex items-center justify-between w-1/3 p-6 mx-4 rounded-lg bg-gradient-to-r from-violet-50 to-violet-100">
+          <div>
+            <h3 className="text-lg bold-bold">درخواست های من</h3>
+            <p className="font-normal">نمایش پیام مناسب به کاربر</p>
+            <Button className="mt-4" shape="round" size="middle" type="primary">
+              <Link to={`/requests`}>مشاهده</Link>
+            </Button>
+          </div>
+          <img className="" src={requestsImg} />
         </div>
       </div>
     </>

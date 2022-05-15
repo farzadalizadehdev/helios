@@ -29,7 +29,7 @@ const Requests = (props) => {
       ),
     },
     {
-      title: "نوع",
+      title: "طبقه",
       dataIndex: "type",
       key: "type",
     },

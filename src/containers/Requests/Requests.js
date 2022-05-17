@@ -6,7 +6,7 @@ const Requests = (props) => {
       title: "عنوان",
       dataIndex: "title",
       key: "title",
-      render: (text) => <a>{text}</a>,
+      // render: (text) => {text},
     },
     {
       title: "وضعیت",
@@ -14,13 +14,13 @@ const Requests = (props) => {
       key: "status",
       render: (tags) => (
         <>
-          {tags.map((tag) => {
+          {tags.map((tag,key) => {
             let color = tag.length > 5 ? "geekblue" : "green";
             if (tag === "loser") {
               color = "volcano";
             }
             return (
-              <Tag color={color} key={tag}>
+              <Tag color={color} key={key}>
                 {tag.toUpperCase()}
               </Tag>
             );

@@ -13,8 +13,9 @@ import { Logo } from "../logo/Logo";
 import "./layout.css";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Routes from "../../Routes";
+import { ToastContainer, toast } from "react-toastify";
 
-const SiderDemo = (props) => {
+const AppLayout = (props) => {
   const { Header, Sider, Content } = Layout;
   const navigate = useNavigate();
   const location = useLocation();
@@ -56,72 +57,86 @@ const SiderDemo = (props) => {
   // },[])
 
   return (
-    <Layout className="h-screen">
-      <Sider trigger={null} collapsible collapsed={state.collapsed}>
-        <div className="logo">
-          <Logo collapsed={state.collapsed} />
-        </div>
-        <Menu
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={[
-            `${
-              location.pathname !== "/"
-                ? location.pathname.slice(1)
-                : "dashboard"
-            }`,
-          ]}
-          onClick={navigationHandler}
-          items={[
-            {
-              key: "dashboard",
-              icon: <AppstoreAddOutlined />,
-              label: "داشبورد",
-            },
-            {
-              key: "requests",
-              icon: <FileDoneOutlined />,
-              label: "درخواست های من",
-            },
-          ]}
-        />
-      </Sider>
-      <Layout className="site-layout">
-        <Header
-          className="flex items-center justify-between site-layout-background"
-          style={{ padding: 0 }}
-        >
-          {React.createElement(
-            state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: toggle,
-            }
-          )}
-          <div className="ml-4">
-            <Avatar size="" icon={<UserOutlined />} />
-            <Dropdown className="mx-2" overlay={menu} trigger={["click"]}>
-              <a onClick={(e) => e.preventDefault()}>
-                <Space>
-                  نام کاربری
-                  <DownOutlined />
-                </Space>
-              </a>
-            </Dropdown>
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <ToastContainer />
+      <Layout className="h-screen">
+        <Sider trigger={null} collapsible collapsed={state.collapsed}>
+          <div className="logo">
+            <Logo collapsed={state.collapsed} />
           </div>
-        </Header>
-        <Content
-          style={{
-            margin: "24px 16px",
-            // padding: 24,
-            minHeight: 280,
-          }}
-        >
-          <Routes />
-        </Content>
+          <Menu
+            theme="light"
+            mode="inline"
+            defaultSelectedKeys={[
+              `${
+                location.pathname !== "/"
+                  ? location.pathname.slice(1)
+                  : "dashboard"
+              }`,
+            ]}
+            onClick={navigationHandler}
+            items={[
+              {
+                key: "dashboard",
+                icon: <AppstoreAddOutlined />,
+                label: "داشبورد",
+              },
+              {
+                key: "requests",
+                icon: <FileDoneOutlined />,
+                label: "درخواست های من",
+              },
+            ]}
+          />
+        </Sider>
+        <Layout className="site-layout">
+          <Header
+            className="flex items-center justify-between site-layout-background"
+            style={{ padding: 0 }}
+          >
+            {React.createElement(
+              state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+              {
+                className: "trigger",
+                onClick: toggle,
+              }
+            )}
+            <div className="ml-4">
+              <Avatar size="" icon={<UserOutlined />} />
+              <Dropdown className="mx-2" overlay={menu} trigger={["click"]}>
+                <a onClick={(e) => e.preventDefault()}>
+                  <Space>
+                    نام کاربری
+                    <DownOutlined />
+                  </Space>
+                </a>
+              </Dropdown>
+            </div>
+          </Header>
+          <Content
+            style={{
+              margin: "24px 16px",
+              // padding: 24,
+              minHeight: 280,
+            }}
+          >
+            <Routes />
+          </Content>
+        </Layout>
       </Layout>
-    </Layout>
+    </>
   );
 };
 
-export default SiderDemo;
+export default AppLayout;

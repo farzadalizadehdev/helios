@@ -3,7 +3,7 @@ import { ConfigProvider } from "antd";
 import Auth from "./containers/Auth/Auth";
 
 function App() {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   ConfigProvider.config({
     theme: {
       primaryColor: "#24bba6",

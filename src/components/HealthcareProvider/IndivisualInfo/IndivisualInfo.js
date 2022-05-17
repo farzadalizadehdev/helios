@@ -7,20 +7,38 @@ import AddressInfo from "../Common/AddressInfo/AddressInfo";
 
 const IndivisualInfo = (props) => {
   const [activeForm, setActiveForm] = useState(1);
+  const [formData, setFormData] = useState({
+    physician:[],
+    medical:[]
+  });
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setActiveForm(2);
+    setFormData({
+
+    })
+    console.log("submit");
+  };
   return (
     <>
       <section hidden={activeForm !== 1}>
-        <Physician />
-        <Medical />
-        <Button
-          onClick={() => setActiveForm(2)}
-          className="mt-6 mr-8"
-          shape="round"
-          size="middle"
-          type="primary"
+        <form
+          onSubmit={handleFormSubmit}
+          className="flex flex-wrap justify-start"
         >
-          مرحله بعد
-        </Button>
+          <Physician />
+          <Medical />
+          <Button
+            // onClick={() => setActiveForm(2)}
+            className="mt-6 mr-8"
+            shape="round"
+            size="middle"
+            type="primary"
+            htmlType="submit"
+          >
+            مرحله بعد
+          </Button>
+        </form>
       </section>
       <section hidden={activeForm !== 2}>
         <AddressInfo />

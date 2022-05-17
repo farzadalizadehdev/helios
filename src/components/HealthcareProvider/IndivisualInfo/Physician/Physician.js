@@ -14,12 +14,12 @@ const Physician = (props) => {
           <Avatar size={120} icon={<UserOutlined />} />
           <h1 className="mt-4">نام و نام خانوادگی</h1>
         </div>
-        <form className="flex flex-wrap justify-start w-3/4">
+        <div className="flex flex-wrap justify-start w-3/4">
           <div className="w-64 mb-6 ml-6">
-            <Input size="large" disabled placeholder="شناسه سیام پزشک" />
+            <Input required size="large"  placeholder="شناسه سیام پزشک" />
           </div>
           <div className="w-64 mb-6 ml-6">
-            <Input size="large" disabled placeholder="کد ملی" />
+            <Input required size="large"  placeholder="کد ملی" />
           </div>
           <div className="w-64 mb-6 ml-6">
             <Select
@@ -84,7 +84,7 @@ const Physician = (props) => {
               />
             </Space>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );

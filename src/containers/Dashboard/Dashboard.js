@@ -71,7 +71,7 @@ const Dashboard = (props) => {
         {modalContent}
       </Modal>
       <div className="flex flex-wrap items-start content-start h-screen py-4 bg-white rounded-md">
-        <div className="flex items-center justify-between flex-auto h-48 p-6 m-4 rounded-lg md:1/3 lg:w-98 bg-gradient-to-r from-teal-50 to-teal-100">
+        <div className="flex items-center justify-between flex-auto h-48 p-6 mx-3 mb-4 rounded-lg md:1/3 lg:w-98 bg-gradient-to-r from-teal-50 to-teal-100">
           <div>
             <h3 className="text-lg bold-bold">ثبت پزشک</h3>
             <p className="font-normal">نمایش پیام مناسب به کاربر</p>
@@ -85,9 +85,9 @@ const Dashboard = (props) => {
               ثبت پزشک
             </Button>
           </div>
-          <img className="" src={physicianImg} />
+          <img className="w-24 lg:w-32" src={physicianImg} />
         </div>
-        <div className="flex items-center justify-between flex-auto h-48 p-6 m-4 rounded-lg md:1/3 lg:w-98 bg-gradient-to-r from-sky-50 to-sky-100">
+        <div className="flex items-center justify-between flex-auto h-48 p-6 mx-3 mb-4 rounded-lg md:1/3 lg:w-98 bg-gradient-to-r from-sky-50 to-sky-100">
           <div>
             <h3 className="text-lg bold-bold">ثبت مرکز</h3>
             <p className="font-normal">نمایش پیام مناسب به کاربر</p>
@@ -101,9 +101,9 @@ const Dashboard = (props) => {
               ثبت مرکز
             </Button>
           </div>
-          <img className="" src={organizationImg} />
+          <img className="w-24 lg:w-32" src={organizationImg} />
         </div>
-        <div className="flex items-center justify-between flex-auto h-48 p-6 m-4 rounded-lg md:1/3 lg:w-98 bg-gradient-to-r from-violet-50 to-violet-100">
+        <div className="flex items-center justify-between flex-auto h-48 p-6 mx-3 mb-4 rounded-lg md:1/3 lg:w-98 bg-gradient-to-r from-violet-50 to-violet-100">
           <div>
             <h3 className="text-lg bold-bold">درخواست های من</h3>
             <p className="font-normal">نمایش پیام مناسب به کاربر</p>
@@ -111,7 +111,7 @@ const Dashboard = (props) => {
               <Link to={`/requests`}>مشاهده</Link>
             </Button>
           </div>
-          <img className="" src={requestsImg} />
+          <img className="w-24 lg:w-32" src={requestsImg} />
         </div>
       </div>
     </>
